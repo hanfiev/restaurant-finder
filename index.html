@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Web App</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js"></script>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css" rel="stylesheet" />
+    <script src='https://unpkg.com/@turf/turf/turf.min.js'></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <section>
+        <div id="map"></div>
+        <div id="container">
+        <div id="card">
+            <form >
+                <label for="coord" style="font-weight: bold;">Coordinate</label><br>
+                <input type="text" id="coord" name="coord" value="106.82692, -6.175678" readonly>
+
+                <br><br>
+                <div id="radiusOption">
+                    <label for="radius" style="font-weight: bold; margin-bottom: 10px;">Search Radius</label><br><br>
+                    <div class="option active" value="500">500m</div>
+                    <div class="option" value="1000">1000m</div>
+                    <div class="option" value="1500">1500m</div>
+                </div>
+            </form>
+
+            <div id="results" style="display: none;">
+                <div id="resultsHeader" style="font-weight: 500">Results from 21 restaurants</div><br>
+                <div id="resultsCoord"><i data-feather="map-pin"></i>-6.123215, 106.15214521</div>
+                <div id="resultsPlace"><h2 style="line-height: 0%;"><h2>Sate Sidarjea</h2>Jl. Bagus Rangin no 25</div>
+                <div id="gofoodBtn"><img src="gofood.svg" height="20px"> </div>
+                <div id="grabfoodBtn"><img src="grabfood.svg" height="15px"> </div>
+            </div>
+
+        </div>
+                <div id="button" onclick="searchRestaurant()">
+                    <p>Find a random restaurant</p>
+                </div>
+    </div>
+       
+    </section>
+    <script>
+        feather.replace()
+      </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
